@@ -4,7 +4,7 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
-public class LoginStepDef {
+public class LoginStepDefs {
     @Given("user is on Docuport login page")
     public void user_is_on_docuport_login_page() {
         // Write code here that turns the phrase above into concrete actions

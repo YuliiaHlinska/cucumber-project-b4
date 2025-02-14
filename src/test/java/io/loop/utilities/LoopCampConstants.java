@@ -1,4 +1,4 @@
-package io.loop.test.Utilities;
+package io.loop.utilities;
 
 public class LoopCampConstants {
     public static final String REGISTRATION_FORM_URL = "https://loopcamp.vercel.app/registration_form.html";

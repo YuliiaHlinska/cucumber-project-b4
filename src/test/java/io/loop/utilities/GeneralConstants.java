@@ -1,4 +1,4 @@
-package io.loop.test.Utilities;
+package io.loop.utilities;
 
 public class GeneralConstants {
     public static final String BROWSER = "chrome";
