@@ -12,10 +12,10 @@ Feature: Google Search Functionality Title Verification
   Scenario: Search functionality result title verification
   Given user is on Google page
   When user types "Loop Academy" in the google search box and clicks enter
-  Then user should see "Loop Academy - Brave Search" in the google title
+  Then user should see "Loop Academy - Google Search" in the google title
 
 
   Scenario: Search functionality result title verification
     Given user is on Google page
     When user types "Yuliia Hlinska" in the google search box and clicks enter
-    Then user should see "Yuliia Hlinska - Brave Search" in the google title
+    Then user should see "Yuliia Hlinska - Google  Search" in the google title

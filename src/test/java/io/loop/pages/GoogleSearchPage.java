@@ -37,7 +37,7 @@ public class GoogleSearchPage {
             }
 
         } catch (Exception e){
-            e.printStackTrace();
+            System.out.println("capture handled");
         }
         driver.switchTo().defaultContent();
 
