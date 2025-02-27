@@ -40,13 +40,6 @@ public class Driver {
             switch (browserType.toLowerCase()){
                 case "chrome":
                     options.addArguments("--lang=en");
-//                    options.addArguments("user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36");
-//                    Map<String, Object> prefs = new HashMap<>();
-//                    prefs.put("credentials_enable_service", false);
-//                    prefs.put("profile.password_manager_enabled", false);
-//                    options.setExperimentalOption("prefs", prefs);
-//                    options.setExperimentalOption("excludeSwitches", Arrays.asList("enable-automation"));
-//                    options.setExperimentalOption("useAutomationExtension", false);
                     driver = new ChromeDriver(options);
                     break;
                 case "firefox":

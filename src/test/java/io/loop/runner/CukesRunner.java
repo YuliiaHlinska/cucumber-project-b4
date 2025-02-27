@@ -10,7 +10,7 @@ import org.junit.runner.RunWith;
         features = "src/test/resources/features",
         glue ="io/loop/step_definitions",
         dryRun = false,
-        tags="@google_search_outline"
+        tags="@dataTableLogin"
 )
 
 public class CukesRunner {

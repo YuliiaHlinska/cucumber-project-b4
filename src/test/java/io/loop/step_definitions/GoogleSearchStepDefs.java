@@ -4,6 +4,7 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import io.loop.pages.GoogleSearchPage;
+import io.loop.pages.POM;
 import io.loop.utilities.BrowserUtils;
 import io.loop.utilities.ConfigurationReader;
 import io.loop.utilities.Driver;
@@ -22,6 +23,8 @@ public class GoogleSearchStepDefs {
 
 
     GoogleSearchPage googleSearchPage = new GoogleSearchPage();
+
+    POM pages = new POM();
 
     @Given("user is on Google page")
     public void user_is_on_google_page() {
