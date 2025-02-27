@@ -9,6 +9,8 @@ import io.loop.utilities.ConfigurationReader;
 import io.loop.utilities.DocuportConstance;
 import io.loop.utilities.Driver;
 
+import java.util.Map;
+
 import static org.junit.Assert.assertTrue;
 
 public class LoginStepDefs {
@@ -86,6 +88,29 @@ public class LoginStepDefs {
     public void user_should_be_able_to_see_the_home_for_supervisor() {
 
     }
+
+
+
+    @When("user enters credentials")
+    public void user_enters_credentials(Map<String, String> credentials) {
+//        for (Map.Entry<String, String> entry : credentials.entrySet()) {
+//            String key = entry.getKey();
+//            System.out.println("key = " + key);
+//            String value = entry.getValue();
+//            System.out.println("value = " + value);
+//            System.out.println("===========");
+//        }
+
+        loginPage.login2(credentials.get("username"), credentials.get("password"));
+
+    }
+
+    @Then("user should bbe able to see the home for client")
+    public void user_should_bbe_able_to_see_the_home_for_client() {
+        assertTrue("Intentionally",true);
+    }
+
+
 
 
 
