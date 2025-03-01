@@ -1,6 +1,6 @@
 Feature: product data tables practice
 
-@listOfMap
+@listOfMap  @smoke
   Scenario: verify each product price
     # practice List<Map<String, String>>
 

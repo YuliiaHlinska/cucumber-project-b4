@@ -8,18 +8,27 @@ import io.loop.utilities.BrowserUtils;
 import io.loop.utilities.ConfigurationReader;
 import io.loop.utilities.DocuportConstance;
 import io.loop.utilities.Driver;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.time.Duration;
 import java.util.Map;
 
 import static org.junit.Assert.assertTrue;
 
 public class LoginStepDefs {
     LoginPage loginPage = new LoginPage();
+    private static final Logger LOG = LogManager.getLogger();
 
 
     @Given("user is on Docuport login page")
     public void user_is_on_docuport_login_page() {
         Driver.getDriver().get(ConfigurationReader.getProperties("docuportBETA"));
+        LOG.info("user are on login page");
+
 
     }
     @When("user enters username for client")
@@ -27,6 +36,8 @@ public class LoginStepDefs {
         BrowserUtils.waitForClickable(loginPage.loginButton, DocuportConstance.LARGE);
         assertTrue("Login button is not displayed", loginPage.loginButton.isDisplayed());
         loginPage.usernameInput.sendKeys(DocuportConstance.USERNAME_CLIENT);
+        LOG.info("user enters username");
+        BrowserUtils.takeScreenshot();
 
 
 
@@ -34,16 +45,27 @@ public class LoginStepDefs {
     @When("user enters password for client")
     public void user_enters_password_for_client() {
         loginPage.passwordInput.sendKeys(DocuportConstance.PASSWORD_CLIENT);
+        LOG.info("user enters password");
+        BrowserUtils.takeScreenshot();
 
     }
     @When("user click login button")
     public void user_click_login_button() {
         loginPage.loginButton.click();
+        LOG.info("user click the login button");
+       // loginPage.continueButton.click();
+        WebDriverWait wait = new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(5));
+        wait.until(ExpectedConditions.elementToBeClickable(loginPage.continueButton));
+        loginPage.continueButton.click();
+        BrowserUtils.takeScreenshot();
+
 
     }
     @Then("user should be able to see the home for client")
     public void user_should_be_able_to_see_the_home_for_client() {
-        assertTrue("Failing for screenshots",false);
+        assertTrue("Intentionally",true);
+        BrowserUtils.takeScreenshot();
+
 
     }
 
