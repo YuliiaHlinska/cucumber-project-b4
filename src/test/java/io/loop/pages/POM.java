@@ -3,7 +3,9 @@ package io.loop.pages;
 public class POM {
 
     private LoginPage loginPage;
+
     private GoogleSearchPage googleSearchPage;
+
     private ProductPage productPage;
 
     public LoginPage getLoginPage() {
