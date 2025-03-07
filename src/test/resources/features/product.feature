@@ -33,14 +33,13 @@ Feature: product data tables practice
     #first row is always a key of our Map
 
 
-  @ListOfList
-
+  @ListOfList @headless @report
   #practice List of List <List<String>>
   Scenario: verify each product price ListOfList
     Given user is on the Homepage
     Then user should be able to see expected prices in the following products with ListOfLists
 
-      | Phones   | Samsung galaxy s6 | 360           |
+      | Phones   | Samsung galaxy s6 | 360          |
       | Phones   | Nokia lumia 1520  | 820           |
       | Phones   | Nexus 6           | 650           |
       | Laptops  | Sony vaio i5      | 790           |
