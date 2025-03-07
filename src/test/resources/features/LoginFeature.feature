@@ -3,7 +3,7 @@ Feature: Docuport Login Logout Feature
   Background: this is for navigating Docuport login page
     Given user is on Docuport login page
 
-  @smoke
+  @smoke @headless
   Scenario: Login as a client
     # Given user is on Docuport login page
     When user enters username for client
