@@ -3,6 +3,7 @@ package io.loop.step_definitions;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import io.loop.pages.HomePage;
 import io.loop.pages.LoginPage;
 import io.loop.utilities.BrowserUtils;
 import io.loop.utilities.ConfigurationReader;
@@ -21,6 +22,7 @@ import static org.junit.Assert.assertTrue;
 
 public class LoginStepDefs {
     LoginPage loginPage = new LoginPage();
+    HomePage homePage = new HomePage();
     private static final Logger LOG = LogManager.getLogger();
 
 
@@ -63,8 +65,11 @@ public class LoginStepDefs {
     }
     @Then("user should be able to see the home for client")
     public void user_should_be_able_to_see_the_home_for_client() {
-        assertTrue("Intentionally",true);
-        BrowserUtils.takeScreenshot();
+//        assertTrue("Intentionally",true);
+//        BrowserUtils.takeScreenshot();
+
+        assertTrue("Home page is not displayed",BrowserUtils.waitForVisibility(homePage.receivedDocs,10).isDisplayed());
+        LOG.info("Home Page is successfully displayed");
 
 
     }
