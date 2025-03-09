@@ -29,6 +29,34 @@ public class LoginPage {
     public WebElement continueButton;
 
 
+    public void insertField(String field, String input){
+        switch (field.toLowerCase().trim()){
+            case "username":
+                BrowserUtils.waitForVisibility(usernameInput, 10).sendKeys(input);
+                break;
+            case "password":
+                BrowserUtils.waitForVisibility(passwordInput, 10).sendKeys(input);
+                break;
+            default: throw new IllegalArgumentException("No such a field:" + field);
+        }
+
+    }
+
+
+    public void clickButton (String button){
+        switch (button.toLowerCase().trim()){
+            case "login":
+                BrowserUtils.waitForClickable(loginButton, 10).click();
+                break;
+            case "continue":
+                BrowserUtils.waitForClickable(continueButton, 10).click();
+                break;
+            default:
+                throw new IllegalArgumentException("Not such button" + button);
+        }
+    }
+
+
 
     /**
      *logins to docuport application
