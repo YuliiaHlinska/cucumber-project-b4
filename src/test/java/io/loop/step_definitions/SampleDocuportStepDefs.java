@@ -2,18 +2,23 @@ package io.loop.step_definitions;
 
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import io.loop.pages.HomePage;
-import io.loop.pages.LeftNavigatePage;
-import io.loop.pages.LoginPage;
-import io.loop.pages.ReceivedDocsPage;
+import io.loop.pages.*;
+import io.loop.utilities.BrowserUtils;
+import io.loop.utilities.Driver;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+
+import java.awt.*;
 
 public class SampleDocuportStepDefs {
 
     LoginPage loginPage = new LoginPage();
     LeftNavigatePage leftNavigatePage = new LeftNavigatePage();
     ReceivedDocsPage receivedDocsPage = new ReceivedDocsPage();
+    MyUploadsPage myUploadsPage = new MyUploadsPage();
+
 
     private static final Logger LOG = LogManager.getLogger();
 
@@ -52,6 +57,10 @@ public class SampleDocuportStepDefs {
                 receivedDocsPage.clickButton(button);
                 LOG.info(button + " - was successfully clicked");
                 break;
+            case "my uploads":
+                myUploadsPage.clickButton(button);
+                LOG.info(button+ " - was successfully clicked");
+                break;
             default: throw new IllegalArgumentException("not such a page: " + page);
         }
 
@@ -60,6 +69,16 @@ public class SampleDocuportStepDefs {
     @Then("user should be able to see {string}")
     public void user_should_be_able_to_see(String string) {
 
+
+    }
+
+    @Then("user uploads document")
+    public void user_uploads_document() throws AWTException {
+
+//        WebElement element = Driver.getDriver().findElement(By.xpath("//input[@type='file']"));
+//        element.sendKeys("C:/Users/admin/Desktop/forUploads.txt");
+
+       BrowserUtils.uploadFile("\"C:\\Users\\admin\\Desktop\\forUploads.txt\"");
 
     }
 

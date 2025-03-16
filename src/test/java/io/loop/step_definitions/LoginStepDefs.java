@@ -56,7 +56,7 @@ public class LoginStepDefs {
         loginPage.loginButton.click();
         LOG.info("user click the login button");
        // loginPage.continueButton.click();
-        WebDriverWait wait = new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(5));
+        WebDriverWait wait = new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(Integer.valueOf(ConfigurationReader.getProperties("timeouts"))));
         wait.until(ExpectedConditions.elementToBeClickable(loginPage.continueButton));
         loginPage.continueButton.click();
         BrowserUtils.takeScreenshot();

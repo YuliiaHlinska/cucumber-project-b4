@@ -39,8 +39,8 @@ public class LeftNavigatePage {
                 BrowserUtils.waitForClickable(homeButton, 10).click();
                 break;
 
-            case "upload":
-                BrowserUtils.waitForClickable(uploadButton, 10).click();
+            case "my uploads":
+                BrowserUtils.waitForClickable(myUploads, 10).click();
                 break;
 
             case "invitations":
