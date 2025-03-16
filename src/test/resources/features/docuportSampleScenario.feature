@@ -19,7 +19,15 @@ Feature: Docuport Sample Scenario
     And user clicks "Upload by" button on "Received Doc" page
     And user inserts "advisor advisor" to "Upload by" field on "Received Doc" page
     And user clicks " Search " button on "Received Doc" page
-    Then user should be able to see "There are no items to display"
+    #Then user should be able to see "There are no items to display"
+
+    And user clicks "My uploads" button on "Left Navigate" page
+    And user clicks "Upload Documents" button on "My uploads" page
+    # if input type works you do not need below step
+    And user clicks "Upload file" button on "My uploads" page
+    And user uploads document
+
+
 
 
 

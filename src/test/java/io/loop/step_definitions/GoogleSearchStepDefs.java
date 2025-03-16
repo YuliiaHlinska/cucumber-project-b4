@@ -55,7 +55,7 @@ public class GoogleSearchStepDefs {
 
     @Then("user should see {string} in the google title")
     public void user_should_see_in_the_google_title(String expectedTitle) {
-        WebDriverWait wait = new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(10));
+        WebDriverWait wait = new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(Integer.valueOf(ConfigurationReader.getProperties("timeouts"))));
         wait.until(ExpectedConditions.titleIs(expectedTitle));
         String actualTitle = Driver.getDriver().getTitle();
         assertEquals("Expected result does not match the actual", expectedTitle, actualTitle);
@@ -68,7 +68,7 @@ public class GoogleSearchStepDefs {
             googleSearchPage.searchbox.clear();
             googleSearchPage.searchbox.sendKeys(p + Keys.ENTER);
             googleSearchPage.handleCaptcha(Driver.getDriver(), googleSearchPage.captcha);
-            WebDriverWait wait = new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(10));
+            WebDriverWait wait = new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(Integer.valueOf(ConfigurationReader.getProperties("timeouts"))));
             wait.until(ExpectedConditions.titleIs(p + " - Google Search"));
             assertEquals("Expected does not match the actual",p + " - Google Search",Driver.getDriver().getTitle());
         });

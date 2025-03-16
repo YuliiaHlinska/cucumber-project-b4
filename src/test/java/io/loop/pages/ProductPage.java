@@ -1,5 +1,6 @@
 package io.loop.pages;
 
+import io.loop.utilities.ConfigurationReader;
 import io.loop.utilities.Driver;
 import org.openqa.selenium.By;
 import org.openqa.selenium.StaleElementReferenceException;
@@ -19,7 +20,7 @@ public class ProductPage {
     public void clickCategory(String category) {
 
         Driver.getDriver().findElement(By.xpath("//a[contains(.,'"+category+"')]")).click();
-        Driver.getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+        Driver.getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(Integer.valueOf(ConfigurationReader.getProperties("timeouts"))));
 
     }
 
